@@ -12,9 +12,12 @@
   },
   "license": "ISC",
   "author": "rc",
-  "type": "commonjs",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
