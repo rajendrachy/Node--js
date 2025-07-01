@@ -55,8 +55,8 @@ console.log(writeFile);
 
 
 //----or----
-const readFile = fs.readFileSync(filePath, "utf-8");
-console.log(readFile);
+// const readFile = fs.readFileSync(filePath, "utf-8");
+// console.log(readFile);
 
 
 
@@ -79,8 +79,8 @@ console.log(readFile);
 
 
 
-const appendFile = fs.appendFileSync(filePath, "\nThis is the updatad data", 'utf-8');
-console.log(appendFile);
+// const appendFile = fs.appendFileSync(filePath, "\nThis is the updatad data", 'utf-8');
+// console.log(appendFile);
 
 
 
@@ -125,9 +125,9 @@ console.log(appendFile);
 //? oldPath: Current file path
 //? newPath: New file path or name
 //* -------------------------------------------------------------
-const newFileName = "renamed-text.txt";
-const newFilePath = path.join(__dirname, newFileName);
+// const newFileName = "renamed-text.txt";
+// const newFilePath = path.join(__dirname, newFileName);
 
-const renameFile = fs.renameSync(filePath, newFilePath)
+// const renameFile = fs.renameSync(filePath, newFilePath)
 
-console.log(renameFile);
+// console.log(renameFile);
