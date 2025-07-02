@@ -10,3 +10,5 @@ const rl = readline.createInterface({  // Using exchange Rate ApI key
 
 
 const apiKey = ' a5dee7cf849881085e036af4';
+
+//----------pending--------------

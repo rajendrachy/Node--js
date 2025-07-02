@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs'); // import fs module
 
 // ------------only creating one folder-------------
 // fs.mkdir('secE', (err) => {
@@ -55,3 +55,6 @@ const fs = require('fs');
 //     console.log("Folder deleted successfully");
 //   }
 // })
+
+
+
