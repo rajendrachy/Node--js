@@ -1,5 +1,10 @@
 //Read two file and write in the another file
 
+// UTF-8 refers to a character encoding 
+// It is the default and most widely used text encoding on the web and in Node.js.
+// Without 'utf8', you’d get raw Buffer data.
+
+
 const fs = require('fs');
 
 fs.readFile('./file1.txt', 'utf-8' , (err1, data1) => {
