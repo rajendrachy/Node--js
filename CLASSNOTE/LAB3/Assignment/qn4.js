@@ -26,44 +26,119 @@
 
 
 
+// const fs = require('fs');
+
+// const source = './myNotes';
+// const destination = './backupNotes';
+
+// // Check if source folder exists
+// if (!fs.existsSync(source)) {
+//   console.log('myNotes/ folder not found.');
+//   process.exit(1);
+// }
+
+// // Create backup folder if not exists
+// if (!fs.existsSync(destination)) {
+//   fs.mkdirSync(destination, { recursive: true });
+// }
+
+// // Read files in myNotes/
+// fs.readdir(source, (err, files) => {
+//   if (!err) {
+//     files.forEach(file => {
+//       const filePath = source + '/' + file;
+
+//       // Copy only .txt files
+//       if (fs.statSync(filePath).isFile() && file.endsWith('.txt')) {
+//         const destPath = destination + '/' + file;
+//         fs.copyFile(filePath, destPath, (err) => {
+//           if (!err) {
+//             console.log(`Copied: ${file}`);
+//           } else {
+//             console.log(`Error copying ${file}:`, err.message);
+//           }
+//         });
+//       }
+//     });
+//   } else {
+//     console.log('Error reading myNotes/:', err.message);
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---practice-------
+
 const fs = require('fs');
 
-const source = './myNotes';
-const destination = './backupNotes';
+const sourceDir = './myNotes';
+const destDir = './backupsNotes';
 
-// Check if source folder exists
-if (!fs.existsSync(source)) {
-  console.log('myNotes/ folder not found.');
+
+if(!fs.existsSync(sourceDir)) {
+  console.log("Source folder not found");
   process.exit(1);
 }
 
-// Create backup folder if not exists
-if (!fs.existsSync(destination)) {
-  fs.mkdirSync(destination, { recursive: true });
+
+if(!fs.existsSync(destDir)) {
+  fs.mkdirSync(destDir, {recursive : true});
 }
 
-// Read files in myNotes/
-fs.readdir(source, (err, files) => {
-  if (!err) {
-    files.forEach(file => {
-      const filePath = source + '/' + file;
 
-      // Copy only .txt files
-      if (fs.statSync(filePath).isFile() && file.endsWith('.txt')) {
-        const destPath = destination + '/' + file;
-        fs.copyFile(filePath, destPath, (err) => {
-          if (!err) {
-            console.log(`Copied: ${file}`);
-          } else {
-            console.log(`Error copying ${file}:`, err.message);
-          }
-        });
+fs.readdir(sourceDir, (err, data) => {
+  if(!err) {
+    console.log(".txt files found");
+    console.log(data);
+
+    data.forEach(val => {
+      console.log(val);
+
+      const itemPath = sourceDir + '/' + val;
+      // console.log(`The itemPath is ${itemPath}`)
+
+
+      if(fs.statSync(itemPath).isFile() && val.endsWith('.txt')) {
+        const destPath = destDir + '/' + val;
+           
+
+
+        fs.copyFile(itemPath, destPath, (err) => {
+          console.log(`File copy ${val}`);
+        })
       }
-    });
+    })
+
   } else {
-    console.log('Error reading myNotes/:', err.message);
+    console.log("Error Occurs: ");
   }
-});
+})
+
 
 
 

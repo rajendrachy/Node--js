@@ -27,3 +27,36 @@ fs.readFile('./file1.txt', 'utf-8' , (err1, data1) => {
       }
 })
 
+
+
+
+
+
+
+
+
+
+//--------------using promises-----------------
+// const fs = require('fs').promises;
+
+// async function combineFiles() {
+//   try {
+//     const data1 = await fs.readFile('./file1.txt', 'utf-8');
+//     console.log(`The data1 is : ${data1}`);
+
+//     const data2 = await fs.readFile('./file2.txt', 'utf-8');
+//     console.log(`The data2 is : ${data2}`);
+
+//     const combined = `${data1}\n${data2}`;
+
+//     await fs.writeFile('combine.txt', combined, 'utf-8');
+//     console.log('File added Successfully');
+    
+//   } catch (err) {
+//     console.error('Error:', err.message);
+//   }
+// }
+
+// combineFiles();
+
+

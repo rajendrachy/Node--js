@@ -29,29 +29,73 @@
 
 
 
-const fs = require('fs'); // Import File System module
+// const fs = require('fs'); // Import File System module
 
-const folderPath = './documents'; // Folder to read
+// const folderPath = './documents'; // Folder to read
 
-// Check if folder exists
-if (!fs.existsSync(folderPath)) {
-  console.log('Error: documents/ folder not found.');
-  process.exit(1); // Stop if folder is missing
+// // Check if folder exists
+// if (!fs.existsSync(folderPath)) {
+//   console.log('Error: documents/ folder not found.');
+//   process.exit(1); // Stop if folder is missing
+// }
+
+// // Read folder contents
+// fs.readdir(folderPath, (err, items) => {
+//   if (!err) {
+//     items.forEach(item => {
+//       const itemPath = folderPath + '/' + item; // Full path // '/' -> use to combine folder + file
+
+//       if(fs.statSync(itemPath).isFile()) { // Check if it's a file
+//         console.log(item); // Print file name
+//       }
+//     });
+//   } else {
+//     console.log('Error reading the folder:', err.message); // Show error
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--practice----
+const fs = require('fs');
+const foldePath = './documents';
+
+
+if(!fs.existsSync(foldePath)) {
+  console.log("Folder not found");
+  process.exit(1);
 }
 
-// Read folder contents
-fs.readdir(folderPath, (err, items) => {
-  if (!err) {
-    items.forEach(item => {
-      const itemPath = folderPath + '/' + item; // Full path // '/' -> use to combine folder + file
 
-      if(fs.statSync(itemPath).isFile()) { // Check if it's a file
-        console.log(item); // Print file name
+
+fs.readdir(foldePath, (err, data) => {
+      if(!err) {
+        console.log("Folder Found in documents: ");
+        console.log(data);
+
+        data.forEach(val => {
+          const itemPath = foldePath + '/' + val;
+
+          if(fs.statSync(itemPath).isFile()) {
+            console.log(val);
+          }
+        })
+
+      }  else {
+        console.log("Error Occurs ");
       }
-    });
-  } else {
-    console.log('Error reading the folder:', err.message); // Show error
-  }
 });
 
 
@@ -83,7 +127,11 @@ fs.readdir(folderPath, (err, items) => {
 
 
 
-// ✅ What fs.statSync() Does:
+
+
+
+
+// What fs.statSync() Does:
 // fs.statSync(path) is a synchronous method from Node.js's fs module.
 
 // It reads metadata (info) about a file or directory at the given path.
@@ -96,14 +144,14 @@ fs.readdir(folderPath, (err, items) => {
 
 // whether it’s a file or a folder, etc.
 
-// 🔍 What .isFile() Does:
+//  What .isFile() Does:
 // isFile() is a method of the fs.Stats object.
 
 // It returns true if the path is a regular file (not a folder, symlink, etc.).
 
 
 
-// 🧠 Full Meaning of the Line:
+// Full Meaning of the Line:
 // js
 // Copy
 // Edit

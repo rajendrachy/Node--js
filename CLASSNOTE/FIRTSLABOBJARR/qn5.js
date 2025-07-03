@@ -38,6 +38,8 @@ function getEmployeeSalary(employeeName) {
         return `Salary details not available for ${employeeName}`;
     }
     
+
+    
     const basic = employee.salary.basic || 0;
     const bonus = employee.salary.bonus || 0;
     

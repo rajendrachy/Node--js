@@ -1,8 +1,8 @@
 {
-  "name": "foldercreating",
+  "name": "lab4",
   "version": "1.0.0",
   "description": "",
-  "main": "creatingF.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,4 +11,3 @@
   "license": "ISC",
   "type": "commonjs"
 }
-
