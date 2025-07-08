@@ -448,59 +448,64 @@
 
 
 //--------------------part48--------------
-import express from "express";
-import { PORT } from "./env.js";
-import path from "path";
+// import express from "express";
+// import { PORT } from "./env.js";
+// import path from "path";
 
-const app = express();
-
-
-const staticPath = path.join(import.meta.dirname, "public");
+// const app = express();
 
 
-
-app.use(express.static(staticPath));
-
-
-// ----------for post we should use extra middlewere-----------
-
-// app.use(express.urlencoded())
-// or, 
-app.use(express.urlencoded({extended : true})); // data parse then show without using it we see undefined in the console
+// const staticPath = path.join(import.meta.dirname, "public");
 
 
-//---------this is for GET request by default in the index.html
-// app.get("/contact", (req, res) => {
-//   console.log(req.query);
+
+// app.use(express.static(staticPath));
+
+
+// // ----------for post we should use extra middlewere-----------
+
+// // app.use(express.urlencoded())
+// // or, 
+// app.use(express.urlencoded({extended : true})); // data parse then show without using it we see undefined in the console
+
+
+// //---------this is for GET request by default in the index.html
+// // app.get("/contact", (req, res) => {
+// //   console.log(req.query);
+// //   res.redirect("/");
+// // })
+
+
+
+
+
+
+// //-----------for post request in index.html---------
+// app.post("/contact", (req, res) => {
+//   console.log(req.body);
 //   res.redirect("/");
 // })
 
 
+// //------part48-----------without html
+// // app.use((req, res) => {
+// //      return res.status(404).send("Page not found")
+// // })
 
 
 
-
-//-----------for post request in index.html---------
-app.post("/contact", (req, res) => {
-  console.log(req.body);
-  res.redirect("/");
-})
-
-
-//------part48-----------without html
+// // --------using html views folder--------------
 // app.use((req, res) => {
-//      return res.status(404).send("Page not found")
+//   return res.status(404).sendFile(path.join(import.meta.dirname, "views", "404.html"))
 // })
 
 
 
-// --------using html views folder--------------
-app.use((req, res) => {
-  return res.status(404).sendFile(path.join(import.meta.dirname, "views", "404.html"))
-})
+
+// app.listen(PORT, () => {
+//   console.log("Server starting on port 3000");
+// })
 
 
 
-app.listen(PORT, () => {
-  console.log("Server starting on port 3000");
-})
+

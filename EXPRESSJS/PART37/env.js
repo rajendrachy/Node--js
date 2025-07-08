@@ -25,6 +25,7 @@ import {z} from "zod"; // to install zod use npm i zod
 
 
 
+
 const portSchema = z.coerce.number().min(1).max(643776).default(3000); // z.coerce.number() converts (or "coerces") non-number input (like strings) into numbers before validating. 
 // while using coerce then change PORT=3002 to PORT="3002" i.e number into string it will run
 

@@ -11,7 +11,8 @@ const server = http.createServer((req, res)=>{
                 res.end()
             }
         })
-    }else if(req.url == "/login" && req.method == "POST"){
+
+    }  else if(req.url == "/login" && req.method == "POST"){
         let body = ""
         let arr ;
         req.on("data", (chunk)=>{
@@ -35,6 +36,9 @@ const server = http.createServer((req, res)=>{
         })
     }
 })
+
+
+
 
 server.listen(3000, ()=>{
     console.log('server started...');
