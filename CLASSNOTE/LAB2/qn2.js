@@ -25,27 +25,50 @@
 
 
 
+// const fs = require('fs');
+// // The .trim() method in JavaScript removes leading and trailing whitespace from a string, including spaces, tabs, and newline characters (\n, \r, etc.).
+
+// function logActivity() {
+//   const now = new Date();
+//   const timestamp = now.toISOString().replace('T', ' ').split('.')[0]; // split('.') splits the string at the dot (.), which separates the seconds and milliseconds:
+
+
+//   const message = `Log entry at ${timestamp}\n`;
+
+//   fs.appendFile('activity.log', message, err => {
+//    if(!err) {
+//   console.log('Logged:', message.trim());
+//    }
+     
+//   });
+// }
+
+// logActivity();
+// setInterval(logActivity, 12000); 
+
+
+
+
+
+
+
+
+
 const fs = require('fs');
-// The .trim() method in JavaScript removes leading and trailing whitespace from a string, including spaces, tabs, and newline characters (\n, \r, etc.).
 
 function logActivity() {
-  const now = new Date();
-  const timestamp = now.toISOString().replace('T', ' ').split('.')[0]; // split('.') splits the string at the dot (.), which separates the seconds and milliseconds:
+    const now = new Date();
+    const timestamp = now.toISOString().replace('T', ' ').split('.')[0];
 
+    const mess = `Log activity at ${timestamp} \n`;
 
-  const message = `Log entry at ${timestamp}\n`;
-
-  fs.appendFile('activity.log', message, err => {
-   if(!err) {
-  console.log('Logged:', message.trim());
-   }
-     
-  });
+    fs.appendFile('acti.log', mess, (err)=> {
+      if(!err) {
+        console.log('Logged:', mess.trim());
+      }
+    })
 }
 
+
 logActivity();
-setInterval(logActivity, 12000); 
-
-
-
-
+setInterval(logActivity, 12000); // Log every 12 seconds
