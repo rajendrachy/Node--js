@@ -10,15 +10,15 @@ app.use(express.urlencoded({ extended: false }));
 
 
 // Serve CSS and static files from 'public' folder
-// app.use(express.static('public'));
+app.use(express.static('public'));
 
 
 //------------------ Without express.static():------------------------
 //------------ You’d have to manually write:-------------
 
-app.get('/style.css', (req, res) => {
-  res.sendFile(__dirname + '/public/style.css');
-});
+// app.get('/style.css', (req, res) => {
+//   res.sendFile(__dirname + '/public/style.css');
+// });
 
 
 
