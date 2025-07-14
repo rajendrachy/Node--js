@@ -14,6 +14,8 @@
 
 
 
+
+
 const fs = require('fs');
 // The .trim() method in JavaScript removes leading and trailing whitespace from a string, including spaces, tabs, and newline characters (\n, \r, etc.).
 
@@ -32,8 +34,10 @@ function logActivity() {
   });
 }
 
+
 logActivity();
 setInterval(logActivity, 12000); 
+
 
 
 

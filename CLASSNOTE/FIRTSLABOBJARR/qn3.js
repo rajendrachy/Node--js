@@ -37,30 +37,31 @@
 
 
 
-const orders = [
-    { id: 1, items: [{ name: 'Pen', price: 10, quantity: 2 }, { name: 'Notebook', price: 50 }] },
-    { id: 2, items: [{ name: 'Bag', price: 700, quantity: 1 }, { name: 'Bottle', price: 300, quantity: 2 }] },
-    { id: 3, items: [{ name: 'Chair', price: 1500 }] },
-    { id: 4, items: [] },
-    { id: 5, items: [{ name: 'Lamp', quantity: 3 }] } // Missing price
-];
+// const orders = [
+//     { id: 1, items: [{ name: 'Pen', price: 10, quantity: 2 }, { name: 'Notebook', price: 50 }] },
+//     { id: 2, items: [{ name: 'Bag', price: 700, quantity: 1 }, { name: 'Bottle', price: 300, quantity: 2 }] },
+//     { id: 3, items: [{ name: 'Chair', price: 1500 }] },
+//     { id: 4, items: [] },
+//     { id: 5, items: [{ name: 'Lamp', quantity: 3 }] } // Missing price
+// ];
 
 
-function getHighValueOrders(orders) {
-  return orders
-    .filter(order => {
-      let total = 0;
-      for (let item of order.items) {
-        total += (item.price || 0) * (item.quantity || 1);
-      }
+// function getHighValueOrders() {
+//   return orders
+//     .filter(order => {
+//       let total = 0;
+//       for (let item of order.items) {
+//         total += (item.price || 0) * (item.quantity || 1);
+//       }
 
-      return total > 1000;
+//       return total > 1000;
 
-    })
-    .map(val => val.id);
-}
+//     })
+//     .map(val => val.id);
+// }
 
-console.log(getHighValueOrders(orders));
+// console.log(getHighValueOrders(orders));
+
 
 
 

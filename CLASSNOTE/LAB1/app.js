@@ -17,22 +17,29 @@
 
 
 
-
 //-----------Asynchronous-------------------
-const fs = require('fs');
+// const fs = require('fs');
 
-fs.readFile('secE.txt', 'utf8', (err, data) => {
-  if (!err) {
-    console.log('Before:', data);
+// fs.readFile('secE.txt', 'utf8', (err, data) => {
+//   if (!err) {
+//     console.log('Before:', data);
 
-    const updated = `${data}\nAdded with async method.`;
+//     const updated = `${data}\nAdded with async method.`;
 
-    fs.writeFile('secE.txt', updated, 'utf8', (err) => {
-      if (!err) console.log('Write done.');
-      else console.error('Write error:', err);
-    });
-  } else {
-    console.error('Read error:', err);
-  }
-});
+//     fs.writeFile('secE.txt', updated, 'utf8', (err) => {
+//       if (!err) console.log('Write done.');
+//       else console.error('Write error:', err);
+//     });
+//   } else {
+//     console.error('Read error:', err);
+//   }
+// });
+
+
+
+
+
+
+
+
 

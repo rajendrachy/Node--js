@@ -20,6 +20,7 @@
 // If employee does not exist in the array, return: "Employee [employeeName] not found"
 
 
+
 const employees = [
     { name: 'John', salary: { basic: 20000, bonus: 5000 } },
     { name: 'Alice', salary: { basic: 25000 } }, // No bonus field
@@ -27,26 +28,31 @@ const employees = [
     { name: 'Carol', salary: { basic: 30000, bonus: 10000 } }
 ];
 
-function getEmployeeSalary(employeeName) {
-    const employee = employees.find(emp => emp.name === employeeName);
-    
-    if (!employee) {
-        return `Employee ${employeeName} not found`;
-    }
-    
-    if (!employee.salary) {
-        return `Salary details not available for ${employeeName}`;
-    }
-    
 
-    
-    const basic = employee.salary.basic || 0;
-    const bonus = employee.salary.bonus || 0;
-    
-    return basic + bonus;
+function getEmployeeSalary(employeeName) {
+   const employ = employees.find(emp => emp.name === employeeName);
+
+   if(!employ) {
+    return `Employ ${employeeName} Not found`;
+   }
+
+   if(!employ.salary) {
+    return `Salary details not available for ${employeeName}`;
+   }
+   
+
+   const basic = employ.salary.basic || 0;
+   const bonus = employ.salary.bonus || 0;
+
+return `The result is: ${basic} + ${bonus} = ${basic + bonus}`;
+
+
 }
 
-
 console.log(getEmployeeSalary('John'));
+
+
+
+
 
 

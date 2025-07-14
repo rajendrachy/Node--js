@@ -92,6 +92,8 @@
 
 
 
+
+
 //---practice-------
 
 const fs = require('fs');
@@ -102,7 +104,7 @@ const destDir = './backupsNotes';
 
 if(!fs.existsSync(sourceDir)) {
   console.log("Source folder not found");
-  process.exit(1);
+  process.exit(1); // // exit with error code 1
 }
 
 
@@ -127,7 +129,6 @@ fs.readdir(sourceDir, (err, data) => {
         const destPath = destDir + '/' + val;
            
 
-
         fs.copyFile(itemPath, destPath, (err) => {
           console.log(`File copy ${val}`);
         })
@@ -138,10 +139,6 @@ fs.readdir(sourceDir, (err, data) => {
     console.log("Error Occurs: ");
   }
 })
-
-
-
-
 
 
 

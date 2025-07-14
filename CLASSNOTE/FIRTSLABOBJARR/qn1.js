@@ -30,6 +30,12 @@
 //  "Login success"
 
 
+
+
+
+
+
+
 const users = [
     { username: 'john', password: '1234' },
     { username: 'alice', password: 'abcd' },
@@ -53,7 +59,7 @@ function login(input) {
 }
 
 
-console.log(login({ username: 'john', password: '1234' }));
+console.log(login({ username: 'john', password: '123' }));
 
 
 

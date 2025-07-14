@@ -1,6 +1,14 @@
 const http = require('http')
 const fs = require('fs')
 const querystring = require('querystring')
+// The querystring module helps you:
+// Convert query strings → JavaScript objects
+// Convert JavaScript objects → query strings
+// Parse and format URL query strings or form-encoded data.
+
+// Client = sends requests (e.g., browser, mobile app)
+// Server = responds to requests (e.g., Node.js app, API server)
+
 
 const server = http.createServer((req, res)=>{
     if(req.url == "/login" && req.method == "GET"){
@@ -11,6 +19,7 @@ const server = http.createServer((req, res)=>{
                 res.end()
             }
         })
+        
         
 
     }  else if(req.url == "/login" && req.method == "POST"){
@@ -23,11 +32,14 @@ const server = http.createServer((req, res)=>{
             // console.log(querystring.parse(body))
             fs.readFile('./data.json', "utf-8", (err, data)=>{
                if(data.length != 0){
-                arr = JSON.parse(data)
+                arr = JSON.parse(data); // JSON.parse() is a built-in JavaScript function that converts a JSON-formatted string into a JavaScript object.
                }else{
                 arr = []
                }
-               arr.push(querystring.parse(body))
+
+               arr.push(querystring.parse(body)); // Converts a URL-encoded string (like form data) into a JavaScript object.
+
+
                fs.writeFile('./data.json', JSON.stringify(arr), (err)=>{
                 if(!err){
                     res.end(`Received data for user: ${querystring.parse(body).username}`);

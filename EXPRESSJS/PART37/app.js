@@ -390,10 +390,10 @@
 
 
 // // ----------for post we should use extra middlewere-----------
-
 // // app.use(express.urlencoded())
 // // or, 
 // app.use(express.urlencoded({extended : true})); // data parse then show without using it we see undefined in the console
+
 
 
 // //---------this is for GET request by default in the index.html

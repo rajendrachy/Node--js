@@ -17,25 +17,30 @@
 //  "<Product Name>: No Categories".
 
 
-const products = [
-  { name: 'Pen', categories: ['stationery', 'writing'] },
-  { name: 'Laptop', categories: ['electronics', 'computers'] },
-  { name: 'Chair', categories: [] },
-  { name: 'Water Bottle', categories: ['kitchen', 'storage'] }
-];
 
 
-function formatProductCategories(products) {
-  return products.map(product => {
-    if (product.categories.length === 0) {
-      return `${product.name}: No Categories`;
-    } else {
-      return `${product.name}: ${product.categories.join(', ')}`;
-    }
-  });
-}
+// const products = [
+//   { name: 'Pen', categories: ['stationery', 'writing'] },
+//   { name: 'Laptop', categories: ['electronics', 'computers'] },
+//   { name: 'Chair', categories: [] },
+//   { name: 'Water Bottle', categories: ['kitchen', 'storage'] }
+// ];
+
+
+// function formatProductCategories(products) {
+//   return products.map(product => {
+//     if (product.categories.length === 0) {
+//       return `${product.name}: No Categories`;
+//     } else {
+//       return `${product.name}: ${product.categories.join(', ')}`; // join => Converts an array to a human-readable string.
+//     }
+//   });
+// }
 
 
 
 
-console.log(formatProductCategories(products));
+// console.log(formatProductCategories(products));
+
+
+

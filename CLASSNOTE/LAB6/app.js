@@ -18,6 +18,10 @@ const server = http.createServer((req, res)=>{
         req.on("data", (chunk)=>{
             body += chunk.toString()
         })
+
+
+        
+
         req.on('end', ()=>{
             // console.log(querystring.parse(body))
             fs.readFile('./data.json', "utf-8", (err, data)=>{

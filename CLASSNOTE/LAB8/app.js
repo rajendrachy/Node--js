@@ -6,8 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // Middleware to parse form data
-app.use(express.urlencoded({ extended: false }));
-
+app.use(express.urlencoded({ extended: false })); // Parses basic HTML form data into req.body
 
 // Serve CSS and static files from 'public' folder
 app.use(express.static('public'));

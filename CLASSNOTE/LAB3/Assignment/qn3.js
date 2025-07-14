@@ -131,6 +131,8 @@ fs.readdir(foldePath, (err, data) => {
 
 
 
+
+
 // What fs.statSync() Does:
 // fs.statSync(path) is a synchronous method from Node.js's fs module.
 
