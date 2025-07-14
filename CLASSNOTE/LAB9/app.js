@@ -64,6 +64,7 @@
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
+
 // // Handle GET routes
 // app.get('/add', (req, res) => {
 //   const a = parseFloat(req.query.num1);

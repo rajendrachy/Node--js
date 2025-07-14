@@ -15,7 +15,41 @@
 // 4.	Print a success message for each file copied
 
 
+const fs = require('fs');
 
+const sourceDir = './myNotes';
+const destDir = './backupsNotes';
+
+if(!fs.existsSync(sourceDir)) {
+  console.log("Folder not found create folder first");
+  process.exit(1);
+}
+
+if(!fs.existsSync(destDir)) {
+  fs.mkdirSync(destDir, {resursive: true});
+}
+
+
+fs.readdir(sourceDir, (err, data) => {
+  if(!err) {
+    console.log(data);
+
+    data.forEach(val => {
+      const itemPath = sourceDir + '/' + val;
+      
+      if(fs.statSync(itemPath).isFile() && val.endsWith('.txt')) {
+            console.log(val);
+            const destPath = destDir + '/' + val;
+
+            fs.copyFile(itemPath, destPath, (err) => {
+              if(!err) {
+                console.log("File copy successfully");
+              }
+            })
+      }
+    })
+  }
+})
 
 
 
@@ -96,49 +130,49 @@
 
 //---practice-------
 
-const fs = require('fs');
+// const fs = require('fs');
 
-const sourceDir = './myNotes';
-const destDir = './backupsNotes';
-
-
-if(!fs.existsSync(sourceDir)) {
-  console.log("Source folder not found");
-  process.exit(1); // // exit with error code 1
-}
+// const sourceDir = './myNotes';
+// const destDir = './backupsNotes';
 
 
-if(!fs.existsSync(destDir)) {
-  fs.mkdirSync(destDir, {recursive : true});
-}
+// if(!fs.existsSync(sourceDir)) {
+//   console.log("Source folder not found");
+//   process.exit(1); // // exit with error code 1
+// }
 
 
-fs.readdir(sourceDir, (err, data) => {
-  if(!err) {
-    console.log(".txt files found");
-    console.log(data);
-
-    data.forEach(val => {
-      console.log(val);
-
-      const itemPath = sourceDir + '/' + val;
-      // console.log(`The itemPath is ${itemPath}`)
+// if(!fs.existsSync(destDir)) {
+//   fs.mkdirSync(destDir, {recursive : true});
+// }
 
 
-      if(fs.statSync(itemPath).isFile() && val.endsWith('.txt')) {
-        const destPath = destDir + '/' + val;
+// fs.readdir(sourceDir, (err, data) => {
+//   if(!err) {
+//     console.log(".txt files found");
+//     console.log(data);
+
+//     data.forEach(val => {
+//       console.log(val);
+
+//       const itemPath = sourceDir + '/' + val;
+//       // console.log(`The itemPath is ${itemPath}`)
+
+
+//       if(fs.statSync(itemPath).isFile() && val.endsWith('.txt')) {
+//         const destPath = destDir + '/' + val;
            
 
-        fs.copyFile(itemPath, destPath, (err) => {
-          console.log(`File copy ${val}`);
-        })
-      }
-    })
+//         fs.copyFile(itemPath, destPath, (err) => {
+//           console.log(`File copy ${val}`);
+//         })
+//       }
+//     })
 
-  } else {
-    console.log("Error Occurs: ");
-  }
-})
+//   } else {
+//     console.log("Error Occurs: ");
+//   }
+// })
 
 
 

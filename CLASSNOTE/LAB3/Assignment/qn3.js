@@ -14,9 +14,37 @@
 
 
 
+const fs = require('fs');
+const path = require('path');
 
+const folderPath = './documents';
 
+if(!fs.existsSync(folderPath)) {
+      console.log("Folder not found");
+      process.exit(1);
+}
 
+// fs.readdir(__dirname + '/documents', (err, data) => {
+//   if(!err) {
+//      console.log(data);
+//   }
+// })
+
+fs.readdir(folderPath, (err, data) => {
+  if(!err) {
+    data.forEach((val) => {
+      const itemPath = __dirname + '/documents' + '/' + val;
+     //const itemPath = folderPath + '/' + val;
+     
+      if(fs.statSync(itemPath).isFile()) {
+            console.log(val);
+      }
+    })
+  } else {
+    console.log(err.message);
+
+  }
+})
 
 
 
@@ -68,35 +96,36 @@
 
 
 
+
 //--practice----
-const fs = require('fs');
-const foldePath = './documents';
+// const fs = require('fs');
+// const foldePath = './documents';
 
 
-if(!fs.existsSync(foldePath)) {
-  console.log("Folder not found");
-  process.exit(1);
-}
+// if(!fs.existsSync(foldePath)) {
+//   console.log("Folder not found");
+//   process.exit(1);
+// }
 
 
 
-fs.readdir(foldePath, (err, data) => {
-      if(!err) {
-        console.log("Folder Found in documents: ");
-        console.log(data);
+// fs.readdir(foldePath, (err, data) => {
+//       if(!err) {
+//         console.log("Folder Found in documents: ");
+//         console.log(data);
 
-        data.forEach(val => {
-          const itemPath = foldePath + '/' + val;
+//         data.forEach(val => {
+//           const itemPath = foldePath + '/' + val;
 
-          if(fs.statSync(itemPath).isFile()) {
-            console.log(val);
-          }
-        })
+//           if(fs.statSync(itemPath).isFile()) {
+//             console.log(val);
+//           }
+//         })
 
-      }  else {
-        console.log("Error Occurs ");
-      }
-});
+//       }  else {
+//         console.log("Error Occurs ");
+//       }
+// });
 
 
 
@@ -154,9 +183,6 @@ fs.readdir(foldePath, (err, data) => {
 
 
 // Full Meaning of the Line:
-// js
-// Copy
-// Edit
 // if (fs.statSync(itemPath).isFile()) {
 // This means:
 

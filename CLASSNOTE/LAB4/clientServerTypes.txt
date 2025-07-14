@@ -22,8 +22,8 @@ Client: UI or frontend (e.g., desktop or browser)
 
 Server: Database or app logic
 
-Example:
 
+.....Example:.....
 Frontend HTML → Node.js server + DB
 
 Good for small systems
@@ -38,7 +38,6 @@ Good for small systems
 
 3. Three-Tier
 Splits into:
-
 Client (UI) → HTML/React
 
 Server (Logic) → Express.js / Node.js API

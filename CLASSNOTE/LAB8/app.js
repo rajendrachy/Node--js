@@ -25,9 +25,11 @@ app.use(express.static('public'));
 
 
 // GET /
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { // In Express, the .sendFile() method automatically ends the response for you—you do not need to manually call res.end() afterward.
+
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 
 // POST /submit

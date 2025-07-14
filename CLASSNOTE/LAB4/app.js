@@ -14,46 +14,59 @@ const fs = require('fs')
 
 
 //-------Non-blocking I/O: Handles multiple requests at once using events.-----------
-// const querystring = require('querystring') // -> is used in Node.js to import the querystring module, which helps parse and stringify URL query strings
+// const querystring = require('querystring') // -> is used in Node.js to import the querystring module, which helps parse and stringify URL query strings // ------------Parsing means analyzing a string and converting it into a structured object that your program can use.-----------------------------------------------
+
+
+
 
 // UTF-8 stands for Unicode Transformation Format - 8-bit. It is the most common character encoding used on the web and in programming to represent text.
 
 
 
-const server = http.createServer((request, response)=>{
-    if(request.url == "/"){
-        response.write("Home page");
-        response.end();
-    }else if(request.url == "/login"){
-        fs.readFile('./login.html','utf-8',(err,data)=>{
-            // response.setHeader('Content-Type', 'text/html')
-            // console.log(response.getHeader('Content-Type'))
-            response.writeHead(200,{'Content-Type': 'text/html'}); // 200 -> Status
-            response.write(data);
-            response.end();
-        })
-    } else if(request.url == "/image"){
-        fs.readFile('./test.jpeg',(err, data)=>{
-            if(!err){
-                response.writeHead(200,{'content-type': 'image/jpeg'});
-                response.write(data);
-                response.end();
-            }
-        })
-    }else{
-        response.write("404 Not found")
-        response.end()
-    }
-})
 
 
 
 
-const PORT = 3000;
+// const server = http.createServer((request, response)=>{
+//     if(request.url == "/"){
+//         response.write("Home page");
+//         response.end();
+//     }else if(request.url == "/login"){
+//         fs.readFile('./login.html','utf-8',(err,data)=>{
+//             // response.setHeader('Content-Type', 'text/html')
+//             // console.log(response.getHeader('Content-Type'))
+//             response.writeHead(200,{'Content-Type': 'text/html'}); // 200 -> Status
+//             response.write(data);
+//             response.end();
+//         })
+//     } else if(request.url == "/image"){
+//         fs.readFile('./test.jpeg',(err, data)=>{
+//             if(!err){
+//                 response.writeHead(200,{'content-type': 'image/jpeg'});
+//                 response.write(data);
+//                 response.end();
+//             }
+//         })
+//     }else{
+//         response.write("404 Not found")
+//         response.end()
+//     }
+// })
 
-server.listen(PORT,()=>{
-    console.log(`server started at http://localhost:${PORT}`)
-})
+
+
+
+
+
+// const PORT = 3000;
+
+// server.listen(PORT,()=>{
+//     console.log(`server started at http://localhost:${PORT}`)
+// })
+
+
+
+
 
 
 
