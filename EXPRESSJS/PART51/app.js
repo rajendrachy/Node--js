@@ -19,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+app.set("view engine", "ejs");
+//app.set("views", "./views"); // dont need to do this by default views  so use first i.e app.set("view engine", "ejs");
 
 
 // Use routes

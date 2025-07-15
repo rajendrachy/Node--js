@@ -26,6 +26,22 @@ router.get('/', (req, res) => {
   res.sendFile(INDEX_HTML_PATH);
 });
 
+
+
+//-----report card---------
+router.get("/report", (req, res) => {
+  const student = {
+    names : "Rajendra",
+    grade : "BE CSE",
+    favSub: "Mathmatics",
+  };
+
+ return res.render("report", {student}); // render that file 
+})
+
+
+
+
 // Handle form submission
 router.post('/shorten', (req, res) => {
   const { url, shortCode } = req.body;
