@@ -15,6 +15,8 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname , 'login.html'));
 });
 
+
+
 // POST route to handle login submission
 app.post('/login', (req, res) => {
     let arr = [];

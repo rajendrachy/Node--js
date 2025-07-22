@@ -17,3 +17,9 @@ router.get("/detail/:roll", (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+

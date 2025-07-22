@@ -32,6 +32,8 @@ app.get('/', (req, res) => { // In Express, the .sendFile() method automatically
 
 
 
+
+
 // POST /submit
 app.post('/index', (req, res) => {
     const name = req.body.name;
@@ -43,6 +45,7 @@ app.post('/index', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
 
